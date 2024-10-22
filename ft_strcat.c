@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 16:50:52 by reda              #+#    #+#             */
-/*   Updated: 2024/10/22 23:07:39 by reda             ###   ########.fr       */
+/*   Created: 2024/10/22 23:10:13 by reda              #+#    #+#             */
+/*   Updated: 2024/10/22 23:50:45 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
+char    *ft_strcat(char *dest, const char *src)
+{
+	int	i;
+	int	size;
 
-// void    *ft_memcpy(void *dest, const void *src, size_t n);
-size_t      ft_strlen(const char *s);
-
-#endif
+	i = 0;
+	size = ft_strlen(dest);
+	while (src[i] != '\0')
+	{
+		dest[size] = src[i];
+		i++;
+		size++;
+	}
+	dest[size] = '\0';
+	return (dest);
+}

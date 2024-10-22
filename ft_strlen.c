@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 16:50:52 by reda              #+#    #+#             */
-/*   Updated: 2024/10/22 23:07:39 by reda             ###   ########.fr       */
+/*   Created: 2024/10/22 22:20:47 by reda              #+#    #+#             */
+/*   Updated: 2024/10/22 22:30:48 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
+size_t  ft_strlen(const char *s)
+{
+    size_t  i;
 
-// void    *ft_memcpy(void *dest, const void *src, size_t n);
-size_t      ft_strlen(const char *s);
-
-#endif
+    i = 0;
+    while (s[i] != '\0')
+    {
+        i++;
+    }
+    return (i);
+}
