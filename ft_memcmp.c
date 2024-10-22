@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 16:50:52 by reda              #+#    #+#             */
-/*   Updated: 2024/10/22 21:49:13 by reda             ###   ########.fr       */
+/*   Created: 2024/10/22 21:49:36 by reda              #+#    #+#             */
+/*   Updated: 2024/10/22 22:13:19 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
+int ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+    unsigned    char *str1;
+    unsigned    char *str2;
+    size_t      i;
 
-// void    *ft_memcpy(void *dest, const void *src, size_t n);
-
-#endif
+    str1 = (unsigned char *) s1;
+    str2 = (unsigned char *) s2;
+    i = 0;
+    if (n == 0)
+        return (0);
+    while (i < n && str1[i] == str2[i])
+    {
+        i++;
+    }
+    if (i == n)
+        return (0);
+    return (str1[i] - str2[i]);
+}

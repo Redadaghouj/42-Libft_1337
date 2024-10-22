@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 16:50:52 by reda              #+#    #+#             */
-/*   Updated: 2024/10/22 21:49:13 by reda             ###   ########.fr       */
+/*   Created: 2024/10/22 21:33:41 by reda              #+#    #+#             */
+/*   Updated: 2024/10/22 21:47:33 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
+void    *ft_memchr(const void *s, int c, size_t n)
+{
+    unsigned char *ptr;
+    
+    ptr = (unsigned char*) s;
+    while (n > 0)
+    {
+        if (*ptr == (unsigned char) c)
+            return (ptr);
+        ptr++;
+        n--;
+    }
+    return (NULL);
+}
 
-// void    *ft_memcpy(void *dest, const void *src, size_t n);
-
-#endif
+int main()
+{
+    char *str = "Mohamed Reda Daghouj";
+    str = ft_memchr(str, 'M', 8);
+    printf("%s", str);
+    return 0;
+}
