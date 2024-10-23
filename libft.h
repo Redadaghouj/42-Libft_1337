@@ -6,7 +6,7 @@
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:50:52 by reda              #+#    #+#             */
-/*   Updated: 2024/10/22 23:07:39 by reda             ###   ########.fr       */
+/*   Updated: 2024/10/23 08:07:12 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string.h>
 # include <stdio.h>
 
-// void    *ft_memcpy(void *dest, const void *src, size_t n);
-size_t      ft_strlen(const char *s);
+//void	*ft_memcpy(void *dest, const void *src, size_t n);
+size_t	ft_strlen(const char *s);
 
 #endif

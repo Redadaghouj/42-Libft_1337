@@ -6,13 +6,13 @@
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 23:10:13 by reda              #+#    #+#             */
-/*   Updated: 2024/10/22 23:50:45 by reda             ###   ########.fr       */
+/*   Updated: 2024/10/23 08:02:31 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int	i;
 	int	size;

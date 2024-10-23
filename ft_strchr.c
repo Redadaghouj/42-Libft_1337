@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 21:03:48 by reda              #+#    #+#             */
-/*   Updated: 2024/10/23 08:11:28 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/10/23 08:14:14 by mdaghouj          #+#    #+#             */
+/*   Updated: 2024/10/23 09:33:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *) s;
-	while (n > 0)
+	while (*s != '\0')
 	{
-		*(ptr++) = (unsigned char) c;
-		n--;
+		if (*s == (char) c)
+		{
+			return ((char *) s);
+		}
+		s++;
 	}
-	return (s);
+	return (NULL);
+}
+
+int main()
+{
+	char *x = ft_strchr("hamza", '\0');
+	printf("%s\n", x);
+	return 0;
 }

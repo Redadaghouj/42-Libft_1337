@@ -6,16 +6,16 @@
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 22:39:05 by reda              #+#    #+#             */
-/*   Updated: 2024/10/22 23:07:06 by reda             ###   ########.fr       */
+/*   Updated: 2024/10/23 08:11:52 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
-    int	i;
-    
+	int	i;
+
 	i = 0;
 	while (*src != '\0')
 	{
@@ -26,4 +26,3 @@ char *ft_strcpy(char *dest, const char *src)
 	*(dest + i) = *src;
 	return (dest);
 }
-
