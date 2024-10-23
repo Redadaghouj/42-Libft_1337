@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 22:39:27 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/23 23:30:59 by reda             ###   ########.fr       */
+/*   Created: 2024/10/23 23:31:48 by reda              #+#    #+#             */
+/*   Updated: 2024/10/23 23:50:18 by reda             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+int	count_digits(int n)
 {
-	unsigned char* s;
+	int	i;
+	
+	i = 0;
+	if (n < 0)
+	{
+		n = -n;
+		i++;
+	}
+	while (n /= 10)
+	{
+		i++;
+	}
+	return (i);
+}
 
-	s = malloc(nmemb * size);
-	if (!s)
-		return (NULL);
-	ft_memset(s, 0, nmemb * size);
-	return (s);
+char	*ft_itoa(int n)
+{
 }
