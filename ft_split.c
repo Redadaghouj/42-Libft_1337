@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:42 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/24 18:42:55 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/24 21:30:28 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,37 @@ int count_words(char const *str, char c)
     return (count);
 }
 
+char    *extract_word(char const *str, char c)
+{
+    int len;
+
+    len = 0;
+    while (!check_charset(str, c))
+    {
+        
+    }
+}
+
 char    **ft_split(char const *s, char c)
 {
     char    **buffer;
     int     len;
-    
+    int     i;
+
     if (!s)
         return (NULL);
     len = count_words(s, c);
-    printf("%d\n", len);
+    buffer = (char *) malloc(len * sizeof(char *) + 1);
+    if (!buffer)
+        return (NULL);
+    i = 0;
+    while (*s != '\0')
+    {
+        if (!check_charset(*s, c))
+        {
+            *buffer = extract_word(*s, c);
+        }
+    }
     return buffer;
 }
 
