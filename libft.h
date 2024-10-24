@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:50:52 by reda              #+#    #+#             */
-/*   Updated: 2024/10/23 23:28:25 by reda             ###   ########.fr       */
+/*   Updated: 2024/10/24 16:10:03 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ size_t	ft_strlen(const char *s);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 void	*ft_memset(void *s, int c, size_t n);
+char    *ft_strdup(const char *s);
+char    *ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif

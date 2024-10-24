@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 11:26:13 by reda              #+#    #+#             */
-/*   Updated: 2024/10/24 07:49:01 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/10/24 09:18:33 by mdaghouj          #+#    #+#             */
+/*   Updated: 2024/10/24 11:13:40 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char    *ft_substr(const char *s, unsigned int start, size_t len)
 {
-    size_t i;
-    size_t j;
+    size_t  i;
+    size_t  size;
+    char    *str;
 
     i = 0;
-    if (little[0] == '\0')
-        return ((char *) big);
-    while (big[i] != '\0' && i < len)
+    str = (char *) malloc(len * sizeof(char) + 1);
+    size = ft_strlen(s + start);
+    if (!str)
+        return (NULL);
+    else if (start > ft_strlen(s))
+        return (ft_strdup(""));
+    else if (len > size)
+        len = size;
+    while (i < len)
     {
-        j = 0;
-        while (big[i + j] == little[j] && i + j < len)
-        {
-            if (little[j + 1] == '\0')
-                return ((char *) &big[i]);
-            j++;
-        }
+        str[i] = s[start + i];
         i++;
     }
-    return (0);
+    str[i] = '\0';
+    return (str);
 }
