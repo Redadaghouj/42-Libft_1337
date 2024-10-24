@@ -27,10 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-int main()
-{
-	char *x = ft_strrchr("hamza", 'a');
-	printf("%s\n", x); 
-	return 0;
-}

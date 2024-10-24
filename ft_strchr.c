@@ -24,10 +24,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-int main()
-{
-	char *x = ft_strchr("hamza", '\0');
-	printf("%s\n", x);
-	return 0;
-}

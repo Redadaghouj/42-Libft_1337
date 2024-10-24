@@ -12,70 +12,70 @@
 
 #include "libft.h"
 
-int prefix_filter(char const *s1, char const *set)
+int	prefix_filter(char const *s1, char const *set)
 {
-    int i;
-    int j;
-    int flag;
+	int	i;
+	int	j;
+	int	flag;
 
-    i = 0;
-    while (s1[i] != '\0')
-    {
-        j = 0;
-        flag = 0;
-        while (set[j] != '\0')
-        {
-            if (s1[i] == set[j])
-            {
-                flag = 1;
-                break;
-            }
-            j++;
-        }
-        if (!flag)
-            break;
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		j = 0;
+		flag = 0;
+		while (set[j] != '\0')
+		{
+			if (s1[i] == set[j])
+			{
+				flag = 1;
+				break ;
+			}
+			j++;
+		}
+		if (!flag)
+			break ;
+		i++;
+	}
+	return (i);
 }
 
-int suffix_filter(char const *s1, char const *set)
+int	suffix_filter(char const *s1, char const *set)
 {
-    int i;
-    int j;
-    int flag;
+	int	i;
+	int	j;
+	int	flag;
 
-    i = ft_strlen(s1) - 1;
-    while (i > 0)
-    {
-        j = 0;
-        flag = 0;
-        while (set[j] != '\0')
-        {
-            if (s1[i] == set[j])
-            {
-                flag = 1;
-                break;
-            }
-            j++;
-        }
-        if (!flag)
-            break;
-        i--;
-    }
-    return (i);
+	i = ft_strlen(s1) - 1;
+	while (i > 0)
+	{
+		j = 0;
+		flag = 0;
+		while (set[j] != '\0')
+		{
+			if (s1[i] == set[j])
+			{
+				flag = 1;
+				break ;
+			}
+			j++;
+		}
+		if (!flag)
+			break ;
+		i--;
+	}
+	return (i);
 }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    int     i;
-    char    *str;
-    int     start;
-    int     end;
+	int		i;
+	char	*str;
+	int		start;
+	int		end;
 
-    i = 0;
-    start = prefix_filter(s1, set);
-    end = suffix_filter(s1, set);
-    str = ft_substr(s1, start, end - start + 1);
-    return (str);
+	i = 0;
+	start = prefix_filter(s1, set);
+	end = suffix_filter(s1, set);
+	str = ft_substr(s1, start, end - start + 1);
+	return (str);
 }

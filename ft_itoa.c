@@ -15,7 +15,7 @@
 int	count_digits(int n, int *sign)
 {
 	int	i;
-	
+
 	i = 0;
 	if (n < 0)
 	{
