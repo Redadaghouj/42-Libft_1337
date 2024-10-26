@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:42 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/26 16:00:07 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/26 20:51:14 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	len = count_words(s, c);
-	buffer = (char **) malloc((len +1) * sizeof(char *));
+	buffer = (char **) malloc((len + 1) * sizeof(char *));
 	if (!buffer)
 		return (NULL);
 	i = 0;
@@ -91,4 +91,15 @@ char	**ft_split(char const *s, char c)
 	}
 	buffer[i] = NULL;
 	return (buffer);
+}
+
+int main ()
+{
+	char **buffer = ft_split("xxxxxxxxhello!", 'x');
+	int i = 0;
+	while (buffer[i] != NULL)
+	{
+		printf("%s\n", buffer[i]);
+		i++;
+	}
 }
