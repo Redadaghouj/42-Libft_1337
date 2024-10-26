@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reda <reda@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:39:56 by reda              #+#    #+#             */
-/*   Updated: 2024/10/25 19:31:54 by reda             ###   ########.fr       */
+/*   Updated: 2024/10/26 15:50:47 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	skip_isspace(const char *nptr)
+static int	skip_isspace(const char *nptr)
 {
 	int	i;
 

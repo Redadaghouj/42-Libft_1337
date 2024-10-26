@@ -6,13 +6,13 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:58:21 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/24 16:16:16 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/26 16:03:35 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	prefix_filter(char const *s1, char const *set)
+static int	prefix_filter(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -39,7 +39,7 @@ int	prefix_filter(char const *s1, char const *set)
 	return (i);
 }
 
-int	suffix_filter(char const *s1, char const *set)
+static int	suffix_filter(char const *s1, char const *set)
 {
 	int	i;
 	int	j;

@@ -6,13 +6,13 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:23:16 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/24 11:57:53 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/26 16:01:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char restrict *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	curr_dst_size;
 	size_t	src_size;

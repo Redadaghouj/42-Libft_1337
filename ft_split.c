@@ -6,20 +6,20 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:42 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/25 08:02:45 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/26 16:00:07 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_charset(char s, char c)
+static int	check_charset(char s, char c)
 {
 	if (s == c)
 		return (1);
 	return (0);
 }
 
-int	count_words(char const *str, char c)
+static int	count_words(char const *str, char c)
 {
 	int	i;
 	int	is_charset;
@@ -42,7 +42,7 @@ int	count_words(char const *str, char c)
 	return (count);
 }
 
-char	*extract_word(char const *str, char c)
+static char	*extract_word(char const *str, char c)
 {
 	int		len;
 	int		i;
