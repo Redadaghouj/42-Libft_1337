@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:58:21 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/26 16:03:35 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/26 18:49:24 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ static int	suffix_filter(char const *s1, char const *set)
 			break ;
 		i--;
 	}
+	if (i == -1)
+		i = 0;
 	return (i);
 }
 
@@ -76,6 +78,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = prefix_filter(s1, set);
 	end = suffix_filter(s1, set);
+	if (start > end)
+		return (ft_strdup(""));
 	str = ft_substr(s1, start, end - start + 1);
 	return (str);
 }

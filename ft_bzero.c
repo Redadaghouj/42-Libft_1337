@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:40:39 by reda              #+#    #+#             */
-/*   Updated: 2024/10/26 16:40:07 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/26 16:59:25 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n > 0)
-	{
-		*((unsigned char *) s) = 0;
-		n--;
-	}
+	ft_memset(s, 0, n);
 }

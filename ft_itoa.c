@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 23:31:48 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/26 16:19:55 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/26 18:22:06 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ char	*ft_itoa(int n)
 	str = (char *) malloc(i * sizeof(char) + 1);
 	if (!str)
 		return (NULL);
-	str[i] = '\0';
-	i--;
+	str[i--] = '\0';
 	if (sign)
 	{
 		str[0] = '-';
@@ -55,9 +54,8 @@ char	*ft_itoa(int n)
 	}
 	while (n > 0)
 	{
-		str[i] = (n % 10) + '0';
+		str[i--] = (n % 10) + '0';
 		n /= 10;
-		i--;
 	}
 	return (str);
 }
