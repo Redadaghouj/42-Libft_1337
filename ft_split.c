@@ -6,17 +6,24 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:42 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/26 20:51:14 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/10/27 08:07:24 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_charset(char s, char c)
+static void	*free_buffer(char **buffer, int len)
 {
-	if (s == c)
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(buffer[i]);
+		i++;
+	}
+	free(buffer);
+	return (NULL);
 }
 
 static int	count_words(char const *str, char c)
@@ -30,9 +37,9 @@ static int	count_words(char const *str, char c)
 	is_charset = 0;
 	while (str[i] != '\0')
 	{
-		if (check_charset(str[i], c))
+		if (str[i] == c)
 			is_charset = 0;
-		else if (!check_charset(str[i], c) && !is_charset)
+		else if (!(str[i] == c) && !is_charset)
 		{
 			count++;
 			is_charset = 1;
@@ -50,7 +57,7 @@ static char	*extract_word(char const *str, char c)
 
 	len = 0;
 	i = 0;
-	while (!check_charset(str[len], c) && str[len] != '\0')
+	while (!(str[len] == c) && str[len] != '\0')
 		len++;
 	word = (char *) malloc(sizeof (char) * (len + 1));
 	if (!word)
@@ -67,39 +74,26 @@ static char	*extract_word(char const *str, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**buffer;
-	int		len;
 	int		i;
 
 	if (!s)
 		return (NULL);
-	len = count_words(s, c);
-	buffer = (char **) malloc((len + 1) * sizeof(char *));
+	buffer = (char **) malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!buffer)
 		return (NULL);
 	i = 0;
 	while (*s != '\0')
 	{
-		if (!check_charset(*s, c))
+		if (!(*s == c))
 		{
 			buffer[i] = extract_word(s, c);
-			i++;
-			while (!check_charset(*s, c) && *s != '\0')
-				s++;
+			if (!buffer[i++])
+				return (free_buffer(buffer, i - 1));
+			s += ft_strlen(buffer[i - 1]);
 		}
 		else
 			s++;
 	}
 	buffer[i] = NULL;
 	return (buffer);
-}
-
-int main ()
-{
-	char **buffer = ft_split("xxxxxxxxhello!", 'x');
-	int i = 0;
-	while (buffer[i] != NULL)
-	{
-		printf("%s\n", buffer[i]);
-		i++;
-	}
 }

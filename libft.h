@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 16:50:52 by reda              #+#    #+#             */
-/*   Updated: 2024/10/26 16:06:25 by mdaghouj         ###   ########.fr       */
+/*   Created: 2024/08/29 16:50:52 by mdaghouj          #+#    #+#             */
+/*   Updated: 2024/10/27 12:21:05 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include <stdio.h>
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
