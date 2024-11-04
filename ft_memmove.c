@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:45:32 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/27 12:16:52 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/11/02 21:49:56 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dest_ptr > src_ptr)
 	{
 		while (n-- > 0)
-		{
 			dest_ptr[n] = src_ptr[n];
-		}
 	}
 	else
-	{
 		return (ft_memcpy(dest, src, n));
-	}
 	return (dest);
 }

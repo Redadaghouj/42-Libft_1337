@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:42 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/27 08:07:24 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/11/03 18:02:00 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	buffer = (char **) malloc((count_words(s, c) + 1) * sizeof(char *));
+	buffer = (char **) malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!buffer)
 		return (NULL);
 	i = 0;
@@ -87,9 +87,10 @@ char	**ft_split(char const *s, char c)
 		if (!(*s == c))
 		{
 			buffer[i] = extract_word(s, c);
-			if (!buffer[i++])
-				return (free_buffer(buffer, i - 1));
-			s += ft_strlen(buffer[i - 1]);
+			if (!buffer[i])
+				return (free_buffer(buffer, i));
+			s += ft_strlen(buffer[i]);
+			i++;
 		}
 		else
 			s++;

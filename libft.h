@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:50:52 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/27 12:21:05 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:40:34 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);

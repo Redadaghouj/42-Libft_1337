@@ -6,7 +6,7 @@
 /*   By: mdaghouj <mdaghouj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:23:16 by mdaghouj          #+#    #+#             */
-/*   Updated: 2024/10/26 20:25:42 by mdaghouj         ###   ########.fr       */
+/*   Updated: 2024/11/03 17:27:20 by mdaghouj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	space_left;
 	size_t	i;
 
-	curr_dst_size = ft_strlen(dst);
 	src_size = ft_strlen(src);
 	if (dstsize == 0)
 		return (src_size);
+	curr_dst_size = ft_strlen(dst);
 	if (dstsize <= curr_dst_size)
 		return (src_size + dstsize);
 	space_left = dstsize - curr_dst_size - 1;
