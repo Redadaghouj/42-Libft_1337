@@ -1,71 +1,124 @@
-# Libft_1337
+# Libft - 1337 Project  
 
-Libft is a foundational project in the 42 curriculum that involves creating a library of essential C functions. These functions replicate or enhance standard C library functions, providing a deeper understanding of memory management, data structures, and basic algorithm design in C.
+[![1337 Badge](https://img.shields.io/badge/1337-Project-blue)](https://www.42network.org/)  
 
-## Overview
+## 📜 Project Overview  
 
-This project covers the creation of a custom C library, `libft`, with a collection of commonly used functions from the C standard library and additional utilities. Completing this project helps solidify an understanding of core programming concepts like pointers, memory allocation, and string manipulation.
+**Libft** is one of the foundational projects in the **1337 curriculum** (part of the 42 Network). This project involves reimplementing essential C standard library functions and adding custom utility functions. It is an excellent introduction to low-level programming and memory management in C.  
 
-## Contents
+---
 
-The library includes:
-- **Memory Manipulation**: Functions for memory allocation, initialization, and copying.
-- **String Manipulation**: Functions for string handling such as `strlen`, `strdup`, `strjoin`, etc.
-- **Character Checks and Conversions**: Functions like `isalpha`, `isdigit`, `toupper`, etc.
-- **Linked List Operations**: Bonus functions that implement singly linked lists (if applicable).
+## 🚀 Features  
 
-## Getting Started
+### Mandatory Part  
+- Reimplementations of standard C library functions (`<stdlib.h>`, `<string.h>`).  
+- Custom functions for memory manipulation, string handling, and character checks.  
 
-### Prerequisites
+### Bonus Part  
+- Utility functions for working with **singly linked lists**, enabling advanced data structure manipulation.  
 
-To compile and use this library, you need:
-- A C compiler (GCC or Clang recommended)
-- `make` utility
+---
 
-### Installation
+## 📂 Repository Structure  
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Redadaghouj/Libft_1337.git
-   ```
-2. Navigate to the directory:
-   ```bash
-   cd Libft_1337
-   ```
-3. Compile the library:
-   ```bash
-   make
-   ```
+```plaintext  
+|-- ft_*.c                 // Individual function implementations  
+|-- bonus/                 // Contains linked list functions for the bonus part  
+|-- libft.h                // Header file containing all function prototypes  
+|-- Makefile               // Compilation rules for building the library  
+```  
 
-This command will generate a `libft.a` file that you can link with other projects.
+---
 
-### Usage
+## 🛠️ How to Use  
 
-Include `libft.h` in your project:
-```c
-#include "libft.h"
-```
+### 1. Clone the Repository  
+```bash  
+git clone https://github.com/Redadaghouj/Libft_1337.git  
+cd Libft_1337  
+```  
 
-When compiling, link the `libft.a` library:
-```bash
-gcc your_program.c -L. -lft -o your_program
-```
+### 2. Compile the Library  
 
-## Project Structure
+Use the provided `Makefile` to compile the library:  
+```bash  
+make        # Compiles the mandatory part  
+make bonus  # Compiles the bonus part  
+```  
 
-- **src/**: Contains the source files for the library functions.
-- **includes/**: Contains the header file `libft.h`.
-- **Makefile**: Automates the compilation process.
+After running these commands, the compiled library `libft.a` will be generated.  
 
-## Bonus Part
+### 3. Include Libft in Your Project  
 
-The bonus part includes additional linked list manipulation functions if completed. Functions in this section allow for the creation, addition, and deletion of nodes in a linked list, enhancing the flexibility and usability of `libft`.
+Link the library to your project during compilation:  
+```bash  
+gcc your_main_file.c -L. -lft -o your_program  
+```  
 
-## License
+Include the `libft.h` header in your source code:  
+```c  
+#include "libft.h"  
+```  
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+---
 
-## Contact
+## 📖 Function Categories  
 
-For any questions or feedback, feel free to reach out:
-- GitHub: [@Redadaghouj](https://github.com/Redadaghouj)
+### Mandatory Functions  
+
+1. **Memory Manipulation**  
+   - `ft_memset`, `ft_memcpy`, `ft_memmove`, `ft_bzero`, `ft_memcmp`, `ft_memchr`.  
+
+2. **String Manipulation**  
+   - `ft_strlen`, `ft_strncmp`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strdup`, `ft_strnstr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_substr`, `ft_striteri`, `ft_strmapi`.  
+
+3. **Character Checks**  
+   - `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`.  
+
+4. **Conversion**  
+   - `ft_atoi`, `ft_itoa`.  
+
+5. **Utility Functions**  
+   - `ft_tolower`, `ft_toupper`.  
+
+6. **File Descriptor Functions**  
+   - `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`.  
+
+### Bonus Functions  
+
+- **Singly Linked List Utilities**  
+   - `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`.  
+
+---
+
+## 🛡️ Makefile Targets  
+
+- `make` – Compiles the mandatory part of the library.  
+- `make bonus` – Compiles the bonus part and includes the linked list utilities.  
+- `make clean` – Removes object files (`.o`) and the bonus tracking file (`.bonus_file`).  
+- `make fclean` – Removes object files and the compiled library (`libft.a`).  
+- `make re` – Cleans and recompiles everything.  
+
+---
+
+## 📋 Objectives  
+
+### Mandatory  
+- Gain proficiency in reimplementing standard C library functions.  
+- Improve problem-solving and memory management skills.  
+
+### Bonus  
+- Expand knowledge by implementing a linked list and its operations.  
+
+---
+
+## 🌟 Achievements  
+
+- Mastered low-level C programming techniques.  
+- Built a reusable library to use in future projects.  
+
+---
+
+## 🛡️ License  
+
+This project is part of the 1337 curriculum. It is shared here for educational purposes and should not be used for plagiarism.
