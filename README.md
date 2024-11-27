@@ -1,4 +1,4 @@
-# Libft - 1337 Project  
+# Libft - 1337/42 Project  
 
 [![1337 Badge](https://img.shields.io/badge/1337-Project-blue)](https://www.42network.org/)  
 
@@ -34,7 +34,7 @@
 
 ### 1. Clone the Repository  
 ```bash  
-git clone https://github.com/Redadaghouj/Libft_1337.git  
+git clone https://github.com/Redadaghouj/42-Libft_1337.git  
 cd Libft_1337  
 ```  
 
