@@ -47,10 +47,10 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= 48 && nptr[i] <= 57)
 	{
 		prev_res = res;
-		res = res * 10 + (nptr[i] - '0');
+		res = res * 10 + (nptr[i] - '0') * sign;
 		if (sign == 1 && prev_res > res)
 			return (-1);
-		else if (sign == -1 && prev_res > res)
+		else if (sign == -1 && prev_res < res)
 			return (0);
 		i++;
 	}
