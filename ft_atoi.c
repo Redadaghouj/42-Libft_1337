@@ -35,10 +35,10 @@ int	check_sign(const char *nptr, int i, int *sign)
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		sign;
-	long	res;
-	long	prev_res;	
+	int	i;
+	int	sign;
+	int	res;
+	int	prev_res;	
 
 	i = skip_isspace(nptr);
 	sign = 1;
@@ -54,5 +54,5 @@ int	ft_atoi(const char *nptr)
 			return (0);
 		i++;
 	}
-	return (res * sign);
+	return (res);
 }
